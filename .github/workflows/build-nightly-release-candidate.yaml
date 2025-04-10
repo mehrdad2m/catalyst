@@ -23,19 +23,19 @@ jobs:
     name: Build on Linux x86-64
     uses: ./.github/workflows/build-wheel-linux-x86_64.yaml
     with:
-      branch: ${{ needs.setup.outputs.branch }}
+      branch: ${{ github.event.inputs.branch }}
 
   linux-aarch:
     name: Build on Linux aarch64
     uses: ./.github/workflows/build-wheel-linux-arm64.yaml
     with:
-      branch: ${{ needs.setup.outputs.branch }}
+      branch: ${{ github.event.inputs.branch }}
 
   macos-arm:
     name: Build on macOS arm64
     uses: ./.github/workflows/build-wheel-macos-arm64.yaml
     with:
-      branch: ${{ needs.setup.outputs.branch }}
+      branch: ${{ github.event.inputs.branch }}
 
   upload:
     name: Prepare & Upload wheels to TestPyPI
