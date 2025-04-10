@@ -15,7 +15,7 @@ on:
       branch:
         description: 'Branch to build from'
         required: true
-        default: 'v0.11.0-rc'
+        default: 'v0.11.0-rc1'
 
 jobs:
   setup:
