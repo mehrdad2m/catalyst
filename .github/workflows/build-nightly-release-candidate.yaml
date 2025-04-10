@@ -26,7 +26,9 @@ jobs:
     steps:
     - name: Set branch
       id: set_branch
-      run: echo "branch=${{ github.event.inputs.branch || 'v0.11.0-rc' }}" >> $GITHUB_OUTPUT
+      run: |
+        BRANCH="${{ github.event.inputs.branch || 'v0.11.0-rc' }}"
+        echo "branch=$BRANCH" >> $GITHUB_OUTPUT
 
     - name: Checkout Catalyst repo release branch
       uses: actions/checkout@v4
