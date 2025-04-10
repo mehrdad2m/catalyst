@@ -15,7 +15,7 @@ on:
       branch:
         description: 'Branch to build from'
         required: true
-        default: 'v0.11.0-rc1'
+        default: 'v0.11.0-rc'
 
 jobs:
   setup:
@@ -26,7 +26,7 @@ jobs:
     steps:
     - name: Set branch
       id: set_branch
-      run: echo "branch=${{ github.event.inputs.branch || 'v0.11.0-rc1' }}" >> $GITHUB_OUTPUT
+      run: echo "branch=${{ github.event.inputs.branch || 'v0.11.0-rc' }}" >> $GITHUB_OUTPUT
 
     - name: Checkout Catalyst repo release branch
       uses: actions/checkout@v4
